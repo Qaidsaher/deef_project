@@ -1,0 +1,65 @@
+import 'package:get/get.dart';
+
+class AppTranslations extends Translations {
+  @override
+  Map<String, Map<String, String>> get keys => {
+        
+        'en': {
+          'welcome_back': 'Welcome Back',
+          'sign_in_continue': 'Sign in to continue',
+          'email': 'Email',
+          'password': 'Password',
+          'sign_in': 'Sign In',
+          'sign_up':'sign Up',
+          "enter_email": "Enter your email",
+          "enter_password": "Enter your password",
+          "sign_in_to_continue":"Sign In To Continue",
+          "Deaf_App":"Deaf App",
+          "Text_Input":"Text Input",
+          "Convert text to sign language":"Convert text to sign language",
+          "Audio Recording":"Audio Recording",
+          "Convert speech to sign language":"Convert speech to sign language",
+          "Video Recording":"Video Recording",
+           'Record and analyze sign language': 'Record and analyze sign language',
+           'Convert to Sign':'Convert to Sign',
+           'Hold to Record':'Hold to Record',
+           "No Spelled Word Yet":"No Spelled Word Yet",
+           'Sign language GIF not found!':'Sign language GIF not found!',
+           "The Result is : ":"The Result is : ",
+           "Everyone Welcome":"Everyone Welcome",
+           "Change_Color":"Change Color",
+           "Change_Font":"Change Font",
+           "Forget_Password":"Forget Password ?",
+           "index":"index",
+        },
+        'ar': {
+          "index":"الفهرس",
+          'welcome_back': 'مرحبًا بعودتك',
+          'sign_in_continue': 'سجّل الدخول للمتابعة',
+          'email': 'البريد الإلكتروني',
+          'password': 'كلمة المرور',
+          'sign_in': 'تسجيل الدخول',
+          'sign_up':'إنشاء حساب',
+           "enter_email": "ادخل ايمايلك",
+           "enter_password": "ادخل كلمة السر",
+            "sign_in_to_continue":"سجل دخولك الان",
+            "Deaf_App":"تطبيق الصم البكم",
+            "Text_Input":"ادخل نص",
+            "Convert text to sign language":"حول نص الى اشارة",
+            "Audio Recording":"تسجيل صوتي",
+            "Convert speech to sign language":"حول صوت الى اشارة",
+            "Video Recording":"تسجيل فيديو",
+           'Record and analyze sign language':"سجل فيديو ",
+           'Convert to Sign':"حول الى اشارة",
+           'Hold to Record':"اضغط للتسجيل",
+           "No Spelled Word Yet":"لم تسجل بعد ",
+           'Sign language GIF not found!':"لا توجد اشارة لهذه الكلمة",
+           "The Result is : ":"النتيجة هي ",
+           "Everyone Welcome":"اهلا بالجميع",
+           "Change_Color":"غير الخط",
+           "Change_Font":"غير لون الخط",
+           "Forget_Password":"هل نسيت كلمة السر؟"
+
+        },
+      };
+}
