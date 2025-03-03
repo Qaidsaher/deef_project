@@ -7,8 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.deafproject"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    compileSdk = 35  // Explicitly setting to 35    ndkVersion = flutter.ndkVersion
     
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

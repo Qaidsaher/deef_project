@@ -1,14 +1,10 @@
-
-
 import 'package:deafproject/Fahras.dart';
 import 'package:deafproject/Text.dart';
-
 import 'package:deafproject/audio.dart';
-import 'package:deafproject/controller/SignLanguageController.dart';
+import 'package:deafproject/detect_sign_language.dart';
 import 'package:deafproject/faq.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,7 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   String _selectedLanguage = "en";
   int index = 1;
   @override
@@ -29,11 +24,16 @@ class _HomePageState extends State<HomePage> {
           setState(() {
             index = value;
           });
-          if(index ==1)
-          {
-           // Get.to(()=>Learn());
-          // Get.to(()=>HomePage());
-          Get.to(()=>FAQPage());
+          if (index == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DetectSignLanguagePage()),
+            );
+          }
+          if (index == 1) {
+            // Get.to(()=>Learn());
+            // Get.to(()=>HomePage());
+            Get.to(() => FAQPage());
           }
           if (index == 0) {
             //Get.to(() => Settings());
@@ -48,9 +48,9 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Color(0xFF002244),
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.arrow_back), label: "Back"),
-         
+          BottomNavigationBarItem(icon: Icon(Icons.save), label: "Save"),
           BottomNavigationBarItem(
-              icon: Icon(Icons.save), label: "Save"),
+              icon: Icon(Icons.accessibility_new), label: "Detect sign"),
         ],
         showUnselectedLabels: true,
       ),
@@ -72,19 +72,17 @@ class _HomePageState extends State<HomePage> {
                 ),
                 items: [
                   PopupMenuItem<String>(
-                    
                     child: Text('index'.tr),
                   ),
-                  
                 ],
-              ).then((value) => Get.to(()=>IndexPage()),);
+              ).then(
+                (value) => Get.to(() => IndexPage()),
+              );
             },
             icon: Icon(Icons.open_in_browser),
           ),
           IconButton(
             onPressed: () {
-             
-
               showMenu(
                 context: context,
                 position: RelativeRect.fromLTRB(
@@ -109,7 +107,6 @@ class _HomePageState extends State<HomePage> {
                 print(value);
                 print("****************************");
                 if (value != null) {
-                  
                   setState(() {
                     _selectedLanguage = value == 'en' ? 'English' : 'Arabic';
                     Get.updateLocale(Locale(value)); // Update the locale
@@ -155,10 +152,7 @@ class _HomePageState extends State<HomePage> {
               'Video Recording'.tr,
               Icons.videocam,
               'Record and analyze sign language'.tr,
-              (){
-
-
-              },
+              () {},
             ),
           ],
         ),
@@ -216,4 +210,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-

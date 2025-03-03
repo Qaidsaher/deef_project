@@ -1,4 +1,5 @@
 import 'package:deafproject/HomePage.dart';
+import 'package:deafproject/detect_sign_language.dart';
 import 'package:deafproject/faq.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -59,6 +60,12 @@ class _LearnState extends State<Learn> {
           setState(() {
             index = value;
           });
+          if (index == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DetectSignLanguagePage()),
+            );
+          }
           if (index == 1) {
             Get.to(() => HomePage());
           }
@@ -73,6 +80,8 @@ class _LearnState extends State<Learn> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.arrow_back), label: "Back"),
           BottomNavigationBarItem(icon: Icon(Icons.save), label: "Save"),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.accessibility_new), label: "Detect sign"),
         ],
         showUnselectedLabels: true,
       ),
